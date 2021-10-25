@@ -1,21 +1,28 @@
 import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 import theme from './colors/App.theme';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+import Home from './pages/Home';
+import Events from './pages/Events';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <h1>Concert Recomendator App</h1>
-          <Button
-            size="large"
-            onClick={() => console.log('click')}
-            variant="contained">Start</Button>
-        </header>
-      </div>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/events">
+            <Events />
+          </Route>
+        </Switch>
+      </ThemeProvider>
+    </Router>
   );
 }
 
