@@ -2,7 +2,7 @@ import React from 'react';
 
 const Events = () => {
     return (
-        <h1>Checkout this events</h1>
+        <h1>Checkout these events</h1>
     ); 
 }
 
